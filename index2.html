@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typefully</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-black text-white flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="max-w-3xl w-full text-center">
+        <!-- Logo -->
+        <div class="mb-8 flex justify-center items-center">
+            <svg class="h-10 w-10 text-[rgb(25,154,245)]" viewBox="0 0 59 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M40.9144 42.5043C41.2343 41.6144 40.9743 41.3345 40.0645 41.6244V41.6144C36.8749 42.6343 31.3456 44.0341 24.9865 42.7843C23.6567 42.5143 23.7367 41.4945 25.0865 41.4245C30.1258 41.1745 38.0047 40.0347 42.2542 35.6652C45.3503 32.4812 47.0048 27.6113 48.8466 22.1899C50.9841 15.8984 53.3739 8.86405 58.562 2.85962C58.6862 2.71513 58.8336 2.56132 58.9853 2.40288C60.031 1.3114 61.2873 0 56.6423 0C33.1845 0 24.678 18.9364 10.3822 50.7606C7.85393 56.3887 5.14463 62.42 2.13953 68.8208C1.88318 69.3646 1.62616 69.8836 1.38357 70.3734C0.689452 71.7749 0.113548 72.9377 0.00981892 73.7602C-0.0701704 74.4401 0.339775 75 1.14967 75C3.95021 74.9725 6.77916 70.0202 9.40189 65.4289C10.5902 63.3486 11.7363 61.3424 12.8181 59.902C14.2079 58.0522 15.5677 57.1924 17.2875 56.7424C18.6405 56.3819 20.1448 56.2122 21.7419 56.0319C23.5556 55.8272 25.4889 55.609 27.4562 55.0826C35.2251 53.0029 39.2446 47.2237 40.9144 42.5043ZM55.7925 67.9509C55.7925 71.8304 52.6429 74.98 48.7635 74.98C44.884 74.98 41.7344 71.8304 41.7344 67.9509C41.7344 64.0714 44.884 60.9219 48.7635 60.9219C52.6429 60.9219 55.7925 64.0714 55.7925 67.9509Z" fill="currentColor"></path>
+            </svg>
+            <span class="ml-1 text-[rgb(25,154,245)] text-[30px] font-bold">Typefully</span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-[40px] font-bold mb-4 leading-tight text-center">Write better content<br>Grow on social media faster</h1>
+
+        <!-- Subtext -->
+        <p class="text-[rgb(196,201,212)] text-[18px] font-normal mb-12 max-w-xl mx-auto text-center">The best AI-powered tool to draft, schedule, and collaborate on X, LinkedIn, Bluesky, and Threads.</p>
+
+        <!-- Sign up -->
+        <p class="text-[rgb(139,148,167)] text-[14.5px] font-normal mb-4">Sign up or log in with</p>
+
+        <!-- Buttons desktop -->
+        <div class="hidden md:flex justify-center gap-4 mb-8">
+            <button class="bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center gap-2">
+                <i class="fab fa-google"></i>
+                Google
+            </button>
+            <button class="bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center gap-2">
+                <i class="fab fa-twitter"></i>
+                X/Twitter
+            </button>
+            <button class="bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center gap-2">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </button>
+            <button class="bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center gap-2">
+                <i class="fas fa-envelope"></i>
+                Email
+            </button>
+        </div>
+
+        <!-- Hamburger for mobile -->
+        <div class="md:hidden flex justify-center mb-8">
+            <button id="menu-btn" class="text-[rgb(196,201,212)] focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Sidebar for mobile -->
+        <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-black transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+            <button id="close-btn" class="absolute top-4 right-4 text-[rgb(196,201,212)]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="flex flex-col items-center mt-16 gap-4 px-4">
+                <button class="w-full bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center justify-center gap-2">
+                    <i class="fab fa-google"></i>
+                    Google
+                </button>
+                <button class="w-full bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center justify-center gap-2">
+                    <i class="fab fa-twitter"></i>
+                    X/Twitter
+                </button>
+                <button class="w-full bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center justify-center gap-2">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </button>
+                <button class="w-full bg-black border border-gray-700 rounded-full px-6 py-2 text-[rgb(196,201,212)] text-[15px] font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </button>
+            </div>
+        </div>
+
+        <!-- Join -->
+        <p class="text-[rgb(196,201,212)] text-[14px] font-normal">Join 220,000+ creators & companies</p>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+    </script>
+</body>
+</html>

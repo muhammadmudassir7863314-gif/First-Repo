@@ -282,7 +282,7 @@
                 // Show success message
                 const successMessage = document.getElementById('successMessage');
                 const successText = document.getElementById('successText');
-                successText.textContent = ${extractedEmails.length} EMAIL ADDRESS${extractedEmails.length > 1 ? 'ES' : ''} FOUND.;
+                successText.textContent = `${extractedEmails.length} EMAIL ADDRESS${extractedEmails.length > 1 ? 'ES' : ''} FOUND.`;
                 successMessage.classList.remove('hidden');
                 
                 // Apply sorting

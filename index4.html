@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        
+        .logo-path {
+            color: rgb(25, 154, 245);
+        }
+        
+        .company-name {
+            color: rgb(25, 154, 245);
+            font-size: 30px;
+            font-weight: 700;
+        }
+        
+        .main-heading {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .sub-heading {
+            color: rgb(196, 201, 212);
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .signup-text {
+            color: rgb(139, 148, 167);
+            font-size: 14.5px;
+            font-weight: 400;
+        }
+        
+        .stats-text {
+            color: rgb(196, 201, 212);
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .auth-btn {
+            color: rgb(196, 201, 212);
+            font-size: 15px;
+            font-weight: 500;
+            background-color: rgba(25, 154, 245, 0.1);
+            border: 1px solid rgba(25, 154, 245, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .auth-btn:hover {
+            background-color: rgba(25, 154, 245, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Rotate first bar for hamburger animation */
+        .change .bar1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        /* Fade out the second bar */
+        .change .bar2 {
+            opacity: 0;
+        }
+        
+        /* Rotate last bar for hamburger animation */
+        .change .bar3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between p-6">
+        <div class="flex items-center">
+            <svg width="60" height="75" viewBox="0 0 60 75" class="logo-path">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M40.9144 42.5043C41.2343 41.6144 40.9743 41.3345 40.0645 41.6244V41.6144C36.8749 42.6343 31.3456 44.0341 24.9865 42.7843C23.6567 42.5143 23.7367 41.4945 25.0865 41.4245C30.1258 41.1745 38.0047 40.0347 42.2542 35.6652C45.3503 32.4812 47.0048 27.6113 48.8466 22.1899C50.9841 15.8984 53.3739 8.86405 58.562 2.85962C58.6862 2.71513 58.8336 2.56132 58.9853 2.40288C60.031 1.3114 61.2873 0 56.6423 0C33.1845 0 24.678 18.9364 10.3822 50.7606C7.85393 56.3887 5.14463 62.42 2.13953 68.8208C1.88318 69.3646 1.62616 69.8836 1.38357 70.3734C0.689452 71.7749 0.113548 72.9377 0.00981892 73.7602C-0.0701704 74.4401 0.339775 75 1.14967 75C3.95021 74.9725 6.77916 70.0202 9.40189 65.4289C10.5902 63.3486 11.7363 61.3424 12.8181 59.902C14.2079 58.0522 15.5677 57.1924 17.2875 56.7424C18.6405 56.3819 20.1448 56.2122 21.7419 56.0319C23.5556 55.8272 25.4889 55.609 27.4562 55.0826C35.2251 53.0029 39.2446 47.2237 40.9144 42.5043ZM55.7925 67.9509C55.7925 71.8304 52.6429 74.98 48.7635 74.98C44.884 74.98 41.7344 71.8304 41.7344 67.9509C41.7344 64.0714 44.884 60.9219 48.7635 60.9219C52.6429 60.9219 55.7925 64.0714 55.7925 67.9509Z" fill="currentColor"></path>
+            </svg>
+            <span class="company-name ml-2">ContentAI</span>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+            <a href="#" class="text-white hover:text-blue-400">Features</a>
+            <a href="#" class="text-white hover:text-blue-400">Pricing</a>
+            <a href="#" class="text-white hover:text-blue-400">Resources</a>
+            <a href="#" class="text-white hover:text-blue-400">Blog</a>
+        </div>
+        
+        <div class="hidden md:flex space-x-4">
+            <button class="auth-btn px-4 py-2 rounded-lg">Log in</button>
+            <button class="auth-btn px-4 py-2 rounded-lg">Sign up</button>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+            <button id="menu-btn" class="flex flex-col">
+                <div class="hamburger-line bar1"></div>
+                <div class="hamburger-line bar2"></div>
+                <div class="hamburger-line bar3"></div>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 bg-black z-50 p-6 md:hidden">
+        <div class="flex justify-between items-center mb-10">
+            <div class="flex items-center">
+                <svg width="40" height="50" viewBox="0 0 60 75" class="logo-path">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M40.9144 42.5043C41.2343 41.6144 40.9743 41.3345 40.0645 41.6244V41.6144C36.8749 42.6343 31.3456 44.0341 24.9865 42.7843C23.6567 42.5143 23.7367 41.4945 25.0865 41.4245C30.1258 41.1745 38.0047 40.0347 42.2542 35.6652C45.3503 32.4812 47.0048 27.6113 48.8466 22.1899C50.9841 15.8984 53.3739 8.86405 58.562 2.85962C58.6862 2.71513 58.8336 2.56132 58.9853 2.40288C60.031 1.3114 61.2873 0 56.6423 0C33.1845 0 24.678 18.9364 10.3822 50.7606C7.85393 56.3887 5.14463 62.42 2.13953 68.8208C1.88318 69.3646 1.62616 69.8836 1.38357 70.3734C0.689452 71.7749 0.113548 72.9377 0.00981892 73.7602C-0.0701704 74.4401 0.339775 75 1.14967 75C3.95021 74.9725 6.77916 70.0202 9.40189 65.4289C10.5902 63.3486 11.7363 61.3424 12.8181 59.902C14.2079 58.0522 15.5677 57.1924 17.2875 56.7424C18.6405 56.3819 20.1448 56.2122 21.7419 56.0319C23.5556 55.8272 25.4889 55.609 27.4562 55.0826C35.2251 53.0029 39.2446 47.2237 40.9144 42.5043ZM55.7925 67.9509C55.7925 71.8304 52.6429 74.98 48.7635 74.98C44.884 74.98 41.7344 71.8304 41.7344 67.9509C41.7344 64.0714 44.884 60.9219 48.7635 60.9219C52.6429 60.9219 55.7925 64.0714 55.7925 67.9509Z" fill="currentColor"></path>
+                </svg>
+                <span class="company-name ml-2">ContentAI</span>
+            </div>
+            <button id="close-menu" class="text-white text-3xl">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-6 text-center">
+            <a href="#" class="text-white text-xl py-3 hover:bg-blue-900 rounded-lg">Features</a>
+            <a href="#" class="text-white text-xl py-3 hover:bg-blue-900 rounded-lg">Pricing</a>
+            <a href="#" class="text-white text-xl py-3 hover:bg-blue-900 rounded-lg">Resources</a>
+            <a href="#" class="text-white text-xl py-3 hover:bg-blue-900 rounded-lg">Blog</a>
+            <button class="auth-btn px-4 py-3 rounded-lg text-xl mt-8">Log in</button>
+            <button class="auth-btn px-4 py-3 rounded-lg text-xl">Sign up</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center justify-center px-6 py-12">
+        <h1 class="main-heading mb-6 max-w-2xl">
+            Write better content <br>
+            <span class="text-blue-400">Grow on social media faster</span>
+        </h1>
+        
+        <p class="sub-heading text-center mb-10 max-w-2xl">
+            The best AI-powered tool to draft, schedule and collaborate on X, LinkedIn, Bluesky and Threads.
+        </p>
+        
+        <div class="my-8">
+            <p class="signup-text text-center mb-4">
+                Sign up or log in with
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-10">
+                <button class="auth-btn flex items-center justify-center px-6 py-3 rounded-lg w-40">
+                    <i class="fab fa-google mr-2"></i> Google
+                </button>
+                <button class="auth-btn flex items-center justify-center px-6 py-3 rounded-lg w-40">
+                    <i class="fab fa-x-twitter mr-2"></i> Twitter
+                </button>
+                <button class="auth-btn flex items-center justify-center px-6 py-3 rounded-lg w-40">
+                    <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                </button>
+                <button class="auth-btn flex items-center justify-center px-6 py-3 rounded-lg w-40">
+                    <i class="fas fa-envelope mr-2"></i> E-mail
+                </button>
+            </div>
+            
+            <p class="stats-text text-center">
+                Join 220,000+ creators & companies
+            </p>
+        </div>
+        
+        <!-- App Preview -->
+        <div class="mt-16 max-w-4xl w-full rounded-xl overflow-hidden shadow-2xl shadow-blue-500/20 border border-gray-800">
+            <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                 alt="Content creation app dashboard" class="w-full h-auto">
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-8 px-6 text-center">
+        <p class="stats-text">
+            &copy; 2023 ContentAI. All rights reserved.
+        </p>
+        <div class="flex justify-center space-x-6 mt-4">
+            <a href="#" class="text-gray-500 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-500 hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-gray-500 hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-500 hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close menu when clicking outside
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Add animation to hamburger icon
+        menuBtn.addEventListener('click', function() {
+            this.classList.toggle('change');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            menuBtn.classList.remove('change');
+        });
+    </script>
+</body>
+</html>
